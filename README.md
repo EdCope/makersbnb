@@ -10,6 +10,9 @@ This web application that allows users to list spaces they have available, and t
 - Users can List a property
 - A way of connecting property owner and holiday-maker
 
+![view_mock_up](/public/images/Page_mock_up.png)
+
+
 ## User Stories
 
 - Any signed-up user can list a new space.
