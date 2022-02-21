@@ -1,5 +1,16 @@
 # Makers BnB
 
+## How to create makersbnb db
+1. connect to psql
+2. run query CREATE DATABASE makersbnb;
+3. run query \c makersbnb;
+4. run query that is saved in 01_create_rentals_table.sql
+
+## How to create makersbnb_test db
+1. connect to psql
+2. run query CREATE DATABASE makersbnb_test;
+3. run query \c makersbnb_test;
+4. run query that is saved in 01_create_rentals_table.sql
 ## Description
 
 This web application that allows users to list spaces they have available, and to hire spaces for the night.
