@@ -10,8 +10,35 @@
           null,
           null
         ]
+      },
+      "/Users/trushnarabadia/makersbnb/spec/feature/view_rental_list_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/trushnarabadia/makersbnb/spec/rentals_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1645458913
+    "timestamp": 1645461772
   }
 }

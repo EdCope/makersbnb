@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/rentals'
 
 class MakersBnB < Sinatra::Base 
   configure :development do
@@ -7,7 +8,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
+    @rentals = Rentals.all
     erb :index
+
   end
 
   run! if app_file == $0
