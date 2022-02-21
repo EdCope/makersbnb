@@ -12,6 +12,7 @@ This web application that allows users to list spaces they have available, and t
 
 ![view_mock_up](/public/images/Page_mock_up.png)
 
+![CRC](/public/images/CRC_diagram.png)
 
 ## User Stories
 
