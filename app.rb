@@ -17,7 +17,6 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/add_rental' do
-    @rentals = 
     redirect '/'
   end
 
