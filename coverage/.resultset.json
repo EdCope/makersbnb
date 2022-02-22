@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/trushnarabadia/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
         "lines": [
           1,
           1,
@@ -11,10 +11,15 @@
           null
         ]
       },
-      "/Users/trushnarabadia/makersbnb/spec/feature/view_rental_list_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/feature/view_rental_list_spec.rb": {
         "lines": [
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -23,11 +28,24 @@
           null
         ]
       },
-      "/Users/trushnarabadia/makersbnb/spec/rentals_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/rentals_spec.rb": {
         "lines": [
           1,
           null,
           1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           1,
           1,
           1,
@@ -39,6 +57,6 @@
         ]
       }
     },
-    "timestamp": 1645461772
+    "timestamp": 1645535527
   }
 }
