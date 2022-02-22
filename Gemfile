@@ -18,7 +18,7 @@ group :development, :test do
   gem 'sinatra-contrib'
   gem 'webrick'
   gem 'rubocop', '1.20'
-
+  gem 'bulma-calendar'
 end
 
 # gem "rails"

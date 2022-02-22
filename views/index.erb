@@ -1,5 +1,9 @@
 <h1>MakersBnB</h1>
 
+<form action="/add_rental">
+  <input type="submit" value="List a property"/>
+</form>
+
 <% @rentals.each do |rental| %>
   <%= rental.title %>
   <%= rental.rental_description %>
@@ -7,3 +11,4 @@
   <%= rental.contact_details %>
   <br>
 <% end %>
+
