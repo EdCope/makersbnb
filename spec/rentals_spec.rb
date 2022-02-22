@@ -12,7 +12,8 @@ describe Rentals do
       rentals = Rentals.all
 
       expect(rentals.length).to eq 2
-      expect(rentals.first).to eq '24 Zoo lane'
+      expect(rentals.first).to be_a Rentals
+      expect(rentals.first.title).to eq '24 Zoo lane'
 
     end
   end
