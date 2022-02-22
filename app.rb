@@ -11,7 +11,14 @@ class MakersBnB < Sinatra::Base
   get '/' do
     @rentals = Rentals.all
     erb :index
+  end
 
+  get '/add_rental' do
+    erb :add_rental
+  end
+
+  post '/add_rental' do
+    redirect '/'
   end
 
   run! if app_file == $0

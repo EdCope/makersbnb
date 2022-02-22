@@ -1,4 +1,7 @@
+require 'pg'
+
 class Rentals 
+
   attr_reader :title, :id, :rental_description, :price, :contact_details
 
   def initialize(title:, id:, rental_description:, price:, contact_details:)
@@ -8,7 +11,6 @@ class Rentals
     @price = price.to_f
     @contact_details = contact_details
   end
-
 
   def self.all 
     if ENV['RACK_ENV'] == 'test'
@@ -24,6 +26,18 @@ class Rentals
     rental_description: rental["rental_description"],
     price: rental["price"],
     contact_details: rental["contact_details"]) }
+  end
+  
+  def self.add(title:, rental_description:, price:, contact_details:)
+    if ENV['ENVIRONMENT'] == 'test'
+        connection = PG.connect(dbname: 'makersbnb_test')
+    else
+        connection = PG.connect(dbname: 'makersbnb')
+    end
+ 
+    connection.exec("INSERT INTO rentals (title, rental_description, price, contact_details) 
+    VALUES('#{title}', '#{rental_description}', '#{price}', '#{contact_details}') 
+    RETURNING id, title, rental_description, price, contact_details")
   end
   
 end

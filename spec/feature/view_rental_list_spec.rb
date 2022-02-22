@@ -6,7 +6,7 @@ feature 'shows rentals' do
     connection.exec("INSERT INTO rentals (title) VALUES('Buckingham Palace');")
     
     visit('/')
-    expect(page).to have_content('24 Zoo lane')
+    expect(page).to have_content('64 Zoo lane')
     expect(page).to have_content('Archies house in Balamory')
     expect(page).to have_content('Buckingham Palace')
   end

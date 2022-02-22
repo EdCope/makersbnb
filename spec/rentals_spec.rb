@@ -1,4 +1,5 @@
 require 'rentals'
+require_relative './spec_helper'
 
 describe Rentals do
   describe '.all' do
@@ -19,6 +20,15 @@ describe Rentals do
       expect(rentals.first.rental_description).to eq 'rdt1'
       expect(rentals.first.price).to eq 99.99
       expect(rentals.first.contact_details).to eq 'cdt1'
+    end
+  end
+  describe '.add' do
+    it 'adds a new rental to the database' do
+      rental = Rentals.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com' )
+      expect(rental['title']).to eq '64 Zoo Lane'
+      expect(rental['rental_description']).to eq 'Lucys house'
+      expect(rental['price']).to eq '3.50'
+      expect(rental['contact_details']).to eq 'lucy@zoolane.com'
     end
   end
 end
