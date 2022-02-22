@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
         "lines": [
           1,
           1,
@@ -11,7 +11,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/input_rental_deatils_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/feature/input_rental_deatils_spec.rb": {
         "lines": [
           1,
           1,
@@ -25,7 +25,28 @@
           null
         ]
       },
-      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/view_rental_list_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/feature/sign-up_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/ed/Projects/makersbnb/spec/feature/view_rental_list_spec.rb": {
         "lines": [
           1,
           1,
@@ -42,7 +63,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/GroupProject/makersbnb/spec/rentals_spec.rb": {
+      "/Users/ed/Projects/makersbnb/spec/rentals_spec.rb": {
         "lines": [
           1,
           null,
@@ -74,12 +95,62 @@
           1,
           1,
           1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ed/Projects/makersbnb/spec/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ed/Projects/makersbnb/lib/user.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          2,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1645542389
+    "timestamp": 1645551379
   }
 }

@@ -27,6 +27,19 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/add_user' do
+    erb :add_user
+  end
+  
+  post '/add_user/new' do
+    User.add(
+      username: params[:username],
+      email: params[:email],
+      password: params[:password]
+    )
+    redirect '/'
+  end
+
   run! if app_file == $0
 
 end
