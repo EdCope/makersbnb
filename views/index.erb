@@ -1,4 +1,9 @@
 <h1>MakersBnB</h1>
 
-<%= @rentals %>
-
+<% @rentals.each do |rental| %>
+  <%= rental.title %>
+  <%= rental.rental_description %>
+  <%= rental.price %>
+  <%= rental.contact_details %>
+  <br>
+<% end %>
