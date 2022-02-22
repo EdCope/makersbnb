@@ -1,5 +1,14 @@
 class Rentals 
   def self.all 
-    ['24 Zoo lane', 'Archies house in Balamory', 'Buckingham Palace']
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'makersbnb_test')
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+
+    result = connection.exec("SELECT * FROM rentals")
+
+    result.map { |rental| rental["title"] }
   end
+  
 end
