@@ -1,0 +1,12 @@
+feature 'available dates' do
+  scenario 'allows host to input available dates in form' do
+    visit('/')
+    click_button('List a property')
+    expect(page).to have_field('title')
+    expect(page).to have_field('rental_description')
+    expect(page).to have_field('price')
+    expect(page).to have_field('contact_details')
+    expect(page).to have_field('rental_start_date')
+    expect(page).to have_field('rental_end_date')
+  end
+end

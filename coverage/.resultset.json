@@ -1,6 +1,22 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/available_dates_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
         "lines": [
           1,
@@ -80,6 +96,6 @@
         ]
       }
     },
-    "timestamp": 1645542389
+    "timestamp": 1645548109
   }
 }
