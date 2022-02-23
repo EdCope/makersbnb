@@ -1,7 +1,25 @@
 <h1>MakersBnB</h1>
 
+<% if !@username.nil? %>
+  Signed in as <%= @username %>
+  <form action='/sign_out'>
+  <input type="submit" value='Sign out'>
+  </form>
+<% else %>
+  Sign in below:
+  <form action="/sign_in" method="post">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <input type="submit" value="Sign in">
+  </form>
+<% end %>
+
 <form action="/add_rental">
   <input type="submit" value="List a property"/>
+</form>
+
+<form action="/add_user">
+  <input type="submit" value="Register"/>
 </form>
 
 <% @rentals.each do |rental| %>
