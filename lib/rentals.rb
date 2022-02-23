@@ -22,14 +22,14 @@ class Rentals
     end
 
     result = connection.exec("SELECT * FROM rentals")
-
     result.map { |rental| Rentals.new(title: rental["title"], 
     id: rental["id"],
     rental_description: rental["rental_description"],
     price: rental["price"],
     contact_details: rental["contact_details"],
     rental_start_date: rental["rental_start_date"],
-    rental_end_date: rental["rental_end_date"]) }
+    rental_end_date: rental["rental_end_date"]) 
+  }
 
   end
   
