@@ -5,8 +5,8 @@ describe Rentals do
     it 'returns all the rentals' do
 
       
-      rental = Rentals.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
-      Rentals.add(title:'24 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
+      rental = Rentals.add(title: '64 Zoo Lane',rental_description: 'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01')
+      Rentals.add(title: '24 Zoo Lane',rental_description: 'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01')
 
       rentals = Rentals.all
 
@@ -25,7 +25,7 @@ describe Rentals do
   
   describe '.add' do
     it 'adds a new rental to the database' do
-      rental = Rentals.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
+      rental = Rentals.add(title: '64 Zoo Lane',rental_description: 'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01')
       expect(rental.title).to eq '64 Zoo Lane'
       expect(rental.rental_description).to eq 'Lucys house'
       expect(rental.price).to eq 3.50
@@ -35,5 +35,4 @@ describe Rentals do
     end
   end
 
-  
 end

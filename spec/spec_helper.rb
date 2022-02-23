@@ -6,10 +6,8 @@ require 'rspec'
 require 'pg'
 require_relative '../app'
 
-
 ENV['RACK_ENV'] = 'test'
 Capybara.app = MakersBnB
-
 
 RSpec.configure do |config|
 

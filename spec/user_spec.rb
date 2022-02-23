@@ -1,7 +1,7 @@
 require_relative '../lib/user'
 
 describe User do
-  #let(test_user) { User.add(username: 'Bob', email: 'example@gmail.com', password: 'PASSWORD') }
+  # let(test_user) { User.add(username: 'Bob', email: 'example@gmail.com', password: 'PASSWORD') }
   describe '.add' do
     it 'adds a user to database' do
       test_user = User.add(username: 'Bob', email: 'example@gmail.com', password: 'PASSWORD')

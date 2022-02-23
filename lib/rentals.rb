@@ -29,15 +29,15 @@ class Rentals
     contact_details: rental["contact_details"],
     rental_start_date: rental["rental_start_date"],
     rental_end_date: rental["rental_end_date"]) 
-  }
+    }
 
   end
   
   def self.add(title:, rental_description:, price:, contact_details:, rental_start_date:, rental_end_date:)
     if ENV['RACK_ENV'] == 'test'
-        connection = PG.connect(dbname: 'makersbnb_test')
+      connection = PG.connect(dbname: 'makersbnb_test')
     else
-        connection = PG.connect(dbname: 'makersbnb')
+      connection = PG.connect(dbname: 'makersbnb')
     end
  
     result = connection.exec("INSERT INTO rentals (title, rental_description, price, contact_details, rental_start_date, rental_end_date) 
