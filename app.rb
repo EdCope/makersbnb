@@ -40,6 +40,11 @@ class MakersBnB < Sinatra::Base
     redirect '/'    
   end
 
+  get '/sign_out' do
+    session.clear
+    redirect '/'
+  end
+
   get '/add_user' do
     erb :add_user
   end
@@ -52,6 +57,8 @@ class MakersBnB < Sinatra::Base
     )
     redirect '/'
   end
+
+
 
   run! if app_file == $0
 
