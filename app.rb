@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/rentals'
+require_relative './lib/user'
 require 'pg'
 
 class MakersBnB < Sinatra::Base 
@@ -8,8 +9,12 @@ class MakersBnB < Sinatra::Base
     register Sinatra::Reloader 
   end
 
+  enable :sessions
+
   get '/' do
     @rentals = Rentals.all
+    @username = session['username']
+    
     erb :index
   end
 
@@ -27,10 +32,18 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
+  post '/sign_in' do
+    user_found = User.sign_in(username: params['username'], password: params['password'])
+    if user_found.is_a?(User)
+      session['username'] = user_found.username
+    end
+    redirect '/'    
+  end
+
   get '/add_user' do
     erb :add_user
   end
-  
+
   post '/add_user/new' do
     User.add(
       username: params[:username],

@@ -8,10 +8,10 @@ feature 'Sign up to the website' do
     fill_in 'password', with: 'PASSWORD'
     click_button 'Register'
     expect(current_path).to eq '/'
+    fill_in 'username', with: 'Bob'
+    fill_in 'password', with: 'PASSWORD'
+    click_button 'Sign in'
     expect(page).to have_content 'Signed in as Bob'
   end
 
-  xscenario 'Username is taken' do
-    visit('/')
-  end
 end
