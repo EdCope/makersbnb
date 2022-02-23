@@ -10,8 +10,8 @@ class Rentals
     @rental_description = rental_description
     @price = price.to_f
     @contact_details = contact_details
-    @rental_start_date = rental_start_date
-    @rental_end_date = rental_end_date
+    @rental_start_date = rental_start_date.split("-").reverse.join("-")
+    @rental_end_date = rental_end_date.split("-").reverse.join("-")
   end
 
   def self.all 
