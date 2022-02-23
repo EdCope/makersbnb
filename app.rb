@@ -36,6 +36,7 @@ class MakersBnB < Sinatra::Base
     user_found = User.sign_in(username: params['username'], password: params['password'])
     if user_found.is_a?(User)
       session['username'] = user_found.username
+    
     end
     redirect '/'    
   end

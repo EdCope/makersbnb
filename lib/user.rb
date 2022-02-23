@@ -41,7 +41,7 @@ class User
     WHERE username = '#{username}'")
 
     if database_user.first.nil?
-      "Username does not exist"
+      "Username does not exist, please register."
     elsif database_user.first['password'] != password
       "Incorrect password for this user"
     else
