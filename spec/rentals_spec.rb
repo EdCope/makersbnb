@@ -29,6 +29,8 @@ describe Rentals do
       expect(rental.rental_description).to eq 'Lucys house'
       expect(rental.price).to eq 3.50
       expect(rental.contact_details).to eq 'lucy@zoolane.com'
+      expect(rental.rental_start_date).to eq '2022-02-25'
+      expect(rental.rental_end_date).to eq '2022-03-01'
     end
   end
 
