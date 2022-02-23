@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/trushnarabadia/makersbnb/spec/feature/available_dates_spec.rb": {
+      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/available_dates_spec.rb": {
         "lines": [
           1,
           1,
@@ -17,7 +17,7 @@
           null
         ]
       },
-      "/Users/trushnarabadia/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
+      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/infrastructure_setup_spec.rb": {
         "lines": [
           1,
           1,
@@ -27,8 +27,11 @@
           null
         ]
       },
-      "/Users/trushnarabadia/makersbnb/spec/feature/input_rental_deatils_spec.rb": {
+      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/input_rental_details_spec.rb": {
         "lines": [
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -41,7 +44,7 @@
           null
         ]
       },
-      "/Users/trushnarabadia/makersbnb/spec/feature/view_rental_list_spec.rb": {
+      "/Users/admin/Projects/GroupProject/makersbnb/spec/feature/view_rental_list_spec.rb": {
         "lines": [
           1,
           1,
@@ -58,7 +61,7 @@
           null
         ]
       },
-      "/Users/trushnarabadia/makersbnb/spec/rentals_spec.rb": {
+      "/Users/admin/Projects/GroupProject/makersbnb/spec/rentals_spec.rb": {
         "lines": [
           1,
           null,
@@ -74,25 +77,26 @@
           null,
           1,
           null,
-          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
           null,
           1,
           1,
           1,
           1,
           1,
-          null,
-          null,
-          null,
           1,
           1,
           1,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          null,
           null,
           null,
           null,
@@ -101,6 +105,6 @@
         ]
       }
     },
-    "timestamp": 1645551463
+    "timestamp": 1645618208
   }
 }

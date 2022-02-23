@@ -9,8 +9,10 @@
   <%= rental.rental_description %>
   <%= rental.price %>
   <%= rental.contact_details %>
-  <%= rental.rental_start_date %>
-  <%= rental.rental_end_date %>
-  <br>
+  <% end %>
+<br>
+<% @dates.each do |date| %>
+  <%= date.rental_start_date %>
+  <%= date.rental_end_date %> >
 <% end %>
 

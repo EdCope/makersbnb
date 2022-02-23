@@ -27,12 +27,32 @@ class Rentals
     id: rental["id"],
     rental_description: rental["rental_description"],
     price: rental["price"],
-    contact_details: rental["contact_details"],
-    rental_start_date: rental["rental_start_date"],
-    rental_end_date: rental["rental_end_date"]) }
-
+    contact_details: rental["contact_details"]
+    # rental_start_date: rental["rental_start_date"],
+    # rental_end_date: rental["rental_end_date"]
+    ) }
   end
   
+  def self.date_range
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'makersbnb_test')
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+
+    result = connection.exec("
+    SELECT rental_start_date, TO_CHAR(rental_start_date, 'DD-MM-YYYY') formatted_start_date, 
+     rental_end_date, TO_CHAR(rental_end_date, 'DD-MM-YYYY') formatted_end_date FROM rentals;
+     ")
+    #  p result
+
+    #       result.first['rental_start_date']
+    # result.map { |rental|  
+    #   rental_start_date: rental["formatted_start_date"],
+    #   rental_end_date: rental["formatted_end_date"] }
+  end
+
+
   def self.add(title:, rental_description:, price:, contact_details:, rental_start_date:, rental_end_date:)
     if ENV['RACK_ENV'] == 'test'
         connection = PG.connect(dbname: 'makersbnb_test')

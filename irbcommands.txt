@@ -1,0 +1,5 @@
+rental = Rentals.new('tt', 'trd', 'tp', 'tcd', 2022-01-01, 2020-02-02)
+
+rental.date_range
+
+rental = Rentals.add(title: 'tt', rental_description: 'trd', price: 99, contact_details: 'tcd', rental_start_date: '2022-01-01', rental_end_date: '2022-02-02')

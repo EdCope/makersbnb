@@ -10,6 +10,7 @@ class MakersBnB < Sinatra::Base
 
   get '/' do
     @rentals = Rentals.all
+    @dates = Rentals.date_range
     erb :index
   end
 
