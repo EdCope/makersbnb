@@ -1,0 +1,1 @@
+CREATE TABLE bookings(id SERIAL PRIMARY KEY, owner_id VARCHAR(30), guest_id VARCHAR(30), rental_id VARCHAR(30), requested_date DATE);
