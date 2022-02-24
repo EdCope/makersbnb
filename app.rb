@@ -34,8 +34,14 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
-  get '/rental/:id' do
-    p :id
+  post '/rental/:id' do
+    p params[:id]
+  end
+
+  post '/tag/:tag' do
+    @posts = @post_manager.all_posts_by_tag(params[:tag])
+
+    erb :index
   end
 
   post '/sign_in' do

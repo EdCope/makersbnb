@@ -29,9 +29,9 @@
   <%= rental.contact_details %>
   <%= rental.rental_start_date.split("-").reverse.join("-") %>
   <%= rental.rental_end_date.split("-").reverse.join("-") %>
+  <form action="/rental/<%= rental.id %>" method="post">
+  <input type="submit" id="rental_select_<%= rental.id %>" value="View rental">
+  </form>
   <br>
 <% end %>
 
-<form action="/rental/1">
-<input type="submit" value="View rental">
-</form>
