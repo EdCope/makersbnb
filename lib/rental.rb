@@ -1,5 +1,5 @@
 require 'pg'
-require 'database_selector'
+require_relative '../spec/database_selector'
 
 class Rental
 
@@ -11,8 +11,8 @@ class Rental
     @rental_description = rental_description
     @price = price.to_f
     @contact_details = contact_details
-    @rental_start_date = rental_start_date.split("-").reverse.join("-")
-    @rental_end_date = rental_end_date.split("-").reverse.join("-")
+    @rental_start_date = rental_start_date
+    @rental_end_date = rental_end_date
   end
 
   def self.all 

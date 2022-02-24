@@ -1,4 +1,4 @@
-require 'database_selector'
+require_relative '../spec/database_selector'
 class User
 
   attr_reader :id, :username, :email, :password 
