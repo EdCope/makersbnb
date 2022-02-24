@@ -26,12 +26,13 @@ class Rental
     contact_details: rental["contact_details"],
     rental_start_date: rental["rental_start_date"],
     rental_end_date: rental["rental_end_date"]) 
-  }
+    }
 
   end
   
   def self.add(title:, rental_description:, price:, contact_details:, rental_start_date:, rental_end_date:)
     connection = db_selector
+
  
     result = connection.exec("INSERT INTO rentals (title, rental_description, price, contact_details, rental_start_date, rental_end_date) 
     VALUES('#{title}', '#{rental_description}', '#{price}', '#{contact_details}', '#{rental_start_date}', '#{rental_end_date}') 

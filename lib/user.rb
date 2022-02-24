@@ -17,14 +17,14 @@ class User
     connection = db_selector
 
     result = connection.exec_params("INSERT INTO users (username, email, password) 
-     VALUES('#{username}', '#{email}', '#{password}')
-     RETURNING id, username, email, password")
-     User.new(
-       id: result[0]['id'],
-       username: result[0]['username'],
-       email: result[0]['email'],
-       password: result[0]['password']
-     )
+    VALUES('#{username}', '#{email}', '#{password}')
+    RETURNING id, username, email, password")
+    User.new(
+    id: result[0]['id'],
+    username: result[0]['username'],
+    email: result[0]['email'],
+    password: result[0]['password']
+    )
   end
 
   def self.sign_in(username:, password:)
@@ -48,7 +48,5 @@ class User
     end
 
   end
-
-
-
 end
+
