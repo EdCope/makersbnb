@@ -39,10 +39,12 @@ class MakersBnB < Sinatra::Base
     erb :request_form
   end
 
-  post '/tag/:tag' do
-    @posts = @post_manager.all_posts_by_tag(params[:tag])
-
-    erb :index
+  post '/request' do
+    Booking.add(owner_id: params['owner_id'],
+    guest_id: params['guest_id'],
+    rental_id: params['rental_id'],
+    requested_date: params['requested_date'])
+    redirect '/myaccount'
   end
 
   post '/sign_in' do
