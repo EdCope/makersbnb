@@ -25,6 +25,8 @@ This web application that allows users to list spaces they have available, and t
 
 ![CRC](/public/images/CRC_diagram.png)
 
+![CRC](/public/images/Pages_mock_up.png)
+
 ## User Stories
 
 - Any signed-up user can list a new space.
