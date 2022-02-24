@@ -3,8 +3,11 @@
 <% if !@username.nil? %>
   Signed in as <%= @username %>
   <form action='/sign_out'>
-  <input type="submit" value='Sign out'>
+    <input type="submit" value='Sign out'>
   </form>
+  <form action='/myaccount'>
+    <input type="submit" value='My account'>
+  </form> 
 <% else %>
   Sign in below:
   <form action="/sign_in" method="post">
