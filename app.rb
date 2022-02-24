@@ -34,6 +34,10 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/rental/:id' do
+    p :id
+  end
+
   post '/sign_in' do
     user_found = User.sign_in(username: params['username'], password: params['password'])
     if user_found.is_a?(User)
