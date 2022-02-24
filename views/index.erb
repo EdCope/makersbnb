@@ -3,8 +3,14 @@
 <% if !@username.nil? %>
   Signed in as <%= @username %>
   <form action='/sign_out'>
-  <input type="submit" value='Sign out'>
+    <input type="submit" value='Sign out'>
   </form>
+  <form action='/myaccount'>
+    <input type="submit" value='My account'>
+  </form> 
+  <form action="/add_rental">
+  <input type="submit" value="List a property"/>
+</form>
 <% else %>
   Sign in below:
   <form action="/sign_in" method="post">
@@ -13,10 +19,6 @@
   <input type="submit" value="Sign in">
   </form>
 <% end %>
-
-<form action="/add_rental">
-  <input type="submit" value="List a property"/>
-</form>
 
 <form action="/add_user">
   <input type="submit" value="Register"/>

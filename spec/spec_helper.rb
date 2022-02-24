@@ -5,6 +5,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'pg'
 require_relative '../app'
+require_relative './register_and_signin'
 
 ENV['RACK_ENV'] = 'test'
 Capybara.app = MakersBnB

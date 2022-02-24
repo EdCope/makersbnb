@@ -1,6 +1,6 @@
 feature 'input rental details' do 
   scenario 'host inputs information about rental into form' do
-    visit('/')
+    register_and_signin
     click_button('List a property')
     expect(page).to have_field('title')
     expect(page).to have_field('rental_description')
