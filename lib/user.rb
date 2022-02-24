@@ -30,7 +30,7 @@ class User
   def self.sign_in(username:, password:)
     connection = db_selector
 
-    database_user = connection.exec_params("SELECT username, email, password FROM users
+    database_user = connection.exec_params("SELECT id, username, email, password FROM users
     WHERE username = '#{username}'")
 
     if database_user.first.nil?

@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/rental'
 require_relative './lib/user'
+require_relative './lib/booking'
 require 'pg'
 
 class MakersBnB < Sinatra::Base 
@@ -41,7 +42,7 @@ class MakersBnB < Sinatra::Base
 
   post '/request' do
     Booking.add(owner_id: params['owner_id'],
-    guest_id: params['guest_id'],
+    guest_id: session['username'].id,
     rental_id: params['rental_id'],
     requested_date: params['requested_date'])
     redirect '/myaccount'
@@ -50,8 +51,7 @@ class MakersBnB < Sinatra::Base
   post '/sign_in' do
     user_found = User.sign_in(username: params['username'], password: params['password'])
     if user_found.is_a?(User)
-      session['username'] = user_found.username
-    
+      session['username'] = user_found
     end
     redirect '/'    
   end

@@ -5,8 +5,8 @@ describe Rental do
     it 'returns all the rentals' do
 
       
-      rental = Rental.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
-      Rental.add(title:'24 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
+      rental = Rental.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01', owner_id: "1" )
+      Rental.add(title:'24 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01', owner_id: "1" )
 
 
       rentals = Rental.all
@@ -26,7 +26,7 @@ describe Rental do
   
   describe '.add' do
     it 'adds a new rental to the database' do
-      rental = Rental.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
+      rental = Rental.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01', owner_id: "1" )
 
       expect(rental.title).to eq '64 Zoo Lane'
       expect(rental.rental_description).to eq 'Lucys house'
@@ -39,7 +39,7 @@ describe Rental do
 
   describe '.rental_by_id' do
     it 'selects a specific rental from database by id' do
-      rental = Rental.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01' )
+      rental = Rental.add(title:'64 Zoo Lane',rental_description:'Lucys house', price: '3.50', contact_details: 'lucy@zoolane.com', rental_start_date: '2022-02-25', rental_end_date: '2022-03-01', owner_id: "1")
       test_rental = Rental.rental_by_id(id: rental.id)
       expect(test_rental.title).to eq '64 Zoo Lane'
       # implied all entry information is available

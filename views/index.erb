@@ -1,7 +1,7 @@
 <h1>MakersBnB</h1>
 
 <% if !@username.nil? %>
-  Signed in as <%= @username %>
+  Signed in as <%= @username.username %>
   <form action='/sign_out'>
     <input type="submit" value='Sign out'>
   </form>

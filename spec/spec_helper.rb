@@ -16,6 +16,8 @@ RSpec.configure do |config|
     p "Setting up test database..."
     connection = PG.connect(dbname: 'makersbnb_test')
     connection.exec("TRUNCATE rentals;")
+    connection.exec("TRUNCATE users;")
+    connection.exec("TRUNCATE bookings;")
   end
   
   config.expect_with :rspec do |expectations|
