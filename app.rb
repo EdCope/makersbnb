@@ -75,6 +75,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/myaccount' do
+    @requests = Booking.user_dates(guest_id: session['username'].id)
     erb :myaccount
   end
 

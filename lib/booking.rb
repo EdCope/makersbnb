@@ -27,4 +27,12 @@ class Booking
     )
   end
 
+  def self.user_dates(guest_id:)
+    connection = db_selector
+    result = connection.exec("SELECT requested_date FROM bookings WHERE guest_id = '#{guest_id}'")
+    result.map{ |date| date }
+  end
+
 end
+
+# Booking.new(id: result["id"], owner_id: requested_date: result["requested_date"])

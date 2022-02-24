@@ -1,6 +1,13 @@
 <form action="/add_rental">
-  <input type="submit" value="List a property"/>
+  <input type="submit" value="List a property">
 </form>
 
 Received booking requests<br><br><br><br><br><br><br><br><br><br><br><br>
+
 Bookings that you have requested
+<br>
+<%if !@requests.nil? %>
+<% @requests.each do |request| %>
+  <%= request['requested_date']%>
+<% end %>
+<%end%>

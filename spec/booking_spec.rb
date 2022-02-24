@@ -1,7 +1,7 @@
 require_relative '../lib/booking'
 
 describe Booking do
-  describe "#add" do
+  describe ".add" do
     it "adds a booking to the db" do
       test_booking = Booking.add(owner_id: "1",
       guest_id: "2",
@@ -11,6 +11,16 @@ describe Booking do
       expect(test_booking.guest_id).to eq "2"
       expect(test_booking.rental_id).to eq "3"
       expect(test_booking.requested_date).to eq "2022-02-24"
+    end
+  end
+  describe ".all" do
+    it "displays bookings related to a user" do
+      test_booking = Booking.add(owner_id: "1",
+      guest_id: "2",
+      rental_id: "3",
+      requested_date: "2022-02-24")
+      requests = Booking.user_dates(guest_id: test_booking.guest_id)
+      expect(requests.first['requested_date']).to eq "2022-02-24"
     end
   end
 end
