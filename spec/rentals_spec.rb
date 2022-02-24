@@ -19,8 +19,8 @@ describe Rental do
       expect(rentals.first.rental_description).to eq 'Lucys house'
       expect(rentals.first.price).to eq 3.50
       expect(rentals.first.contact_details).to eq 'lucy@zoolane.com'
-      expect(rentals.first.rental_start_date).to eq '25-02-2022'
-      expect(rentals.first.rental_end_date).to eq '01-03-2022'
+      expect(rentals.first.rental_start_date).to eq '2022-02-25'
+      expect(rentals.first.rental_end_date).to eq '2022-03-01'
     end
   end
   
@@ -32,8 +32,8 @@ describe Rental do
       expect(rental.rental_description).to eq 'Lucys house'
       expect(rental.price).to eq 3.50
       expect(rental.contact_details).to eq 'lucy@zoolane.com'
-      expect(rental.rental_start_date).to eq '25-02-2022'
-      expect(rental.rental_end_date).to eq '01-03-2022'
+      expect(rental.rental_start_date).to eq '2022-02-25'
+      expect(rental.rental_end_date).to eq '2022-03-01'
     end
   end
 
