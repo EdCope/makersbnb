@@ -61,6 +61,10 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/myaccount' do
+    erb :myaccount
+  end
+
   run! if app_file == $0
 
 end
