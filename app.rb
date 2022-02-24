@@ -35,7 +35,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/rental/:id' do
-    p params[:id]
+    @selected_rental = Rental.rental_by_id(id: params[:id])
+    erb :request_form
   end
 
   post '/tag/:tag' do

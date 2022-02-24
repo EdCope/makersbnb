@@ -32,7 +32,6 @@ class Rental
   
   def self.add(title:, rental_description:, price:, contact_details:, rental_start_date:, rental_end_date:)
     connection = db_selector
-
  
     result = connection.exec("INSERT INTO rentals (title, rental_description, price, contact_details, rental_start_date, rental_end_date) 
     VALUES('#{title}', '#{rental_description}', '#{price}', '#{contact_details}', '#{rental_start_date}', '#{rental_end_date}') 
@@ -48,4 +47,19 @@ class Rental
       )
   end
   
+  def self.rental_by_id(id:)
+    connection = db_selector
+
+    rental = connection.exec("SELECT * FROM rentals WHERE id = $1;", [id])
+    Rental.new(
+      id: rental[0]['id'], 
+      title: rental[0]['title'], 
+      rental_description: rental[0]['rental_description'], 
+      price: rental[0]['price'], 
+      contact_details: rental[0]['contact_details'],
+      rental_start_date: rental[0]['rental_start_date'],
+      rental_end_date: rental[0]['rental_end_date']
+      ) 
+  end
+
 end
