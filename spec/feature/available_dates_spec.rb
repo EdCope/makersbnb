@@ -1,6 +1,6 @@
 feature 'available dates' do
   scenario 'allows host to input available dates in form' do
-    visit('/')
+    register_and_signin
     click_button('List a property')
     expect(current_path).to eq '/add_rental'
     expect(page).to have_field('title')

@@ -1,1 +1,25 @@
-1. go to website
+pretend user already has received a booking request
+pretend user already requested a booking\
+
+
+
+. user a3 logs in
+. go to myaccount
+. see a4 has requested a booking from them
+. see that they have requested a booking for a4's rental
+. user a3 logs out
+
+
+. user a5 logs in
+. go to my account
+. sees no bookings
+
+
+
+
+
+
+
+we have 3 users
+a3 and a4 property respectively
+
