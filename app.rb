@@ -34,6 +34,17 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
+  post '/rental/:id' do
+    @selected_rental = Rental.rental_by_id(id: params[:id])
+    erb :request_form
+  end
+
+  post '/tag/:tag' do
+    @posts = @post_manager.all_posts_by_tag(params[:tag])
+
+    erb :index
+  end
+
   post '/sign_in' do
     user_found = User.sign_in(username: params['username'], password: params['password'])
     if user_found.is_a?(User)
