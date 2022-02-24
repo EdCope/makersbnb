@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative './lib/rentals'
+require_relative './lib/rental'
 require_relative './lib/user'
 require 'pg'
 
@@ -12,7 +12,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @rentals = Rentals.all
+    @rentals = Rental.all
     @username = session['username']
     
     erb :index
@@ -23,7 +23,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/add_rental' do
-    Rentals.add(
+    Rental.add(
       title: params[:title], 
       rental_description: params[:rental_description], 
       price: params[:price], 

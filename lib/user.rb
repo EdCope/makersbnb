@@ -1,3 +1,4 @@
+require 'database_selector'
 class User
 
   attr_reader :id, :username, :email, :password 
@@ -13,11 +14,7 @@ class User
   end
 
   def self.add(username:, email:, password:)
-    if ENV['RACK_ENV'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
+    connection = db_selector
 
     result = connection.exec_params("INSERT INTO users (username, email, password) 
      VALUES('#{username}', '#{email}', '#{password}')
@@ -31,11 +28,7 @@ class User
   end
 
   def self.sign_in(username:, password:)
-    if ENV['RACK_ENV'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
+    connection = db_selector
 
     database_user = connection.exec_params("SELECT username, email, password FROM users
     WHERE username = '#{username}'")

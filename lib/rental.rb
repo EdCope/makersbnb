@@ -1,6 +1,7 @@
 require 'pg'
+require 'database_selector'
 
-class Rentals 
+class Rental
 
   attr_reader :title, :id, :rental_description, :price, :contact_details, :rental_start_date, :rental_end_date
 
@@ -15,14 +16,10 @@ class Rentals
   end
 
   def self.all 
-    if ENV['RACK_ENV'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
+    connection = db_selector
 
     result = connection.exec("SELECT * FROM rentals")
-    result.map { |rental| Rentals.new(title: rental["title"], 
+    result.map { |rental| Rental.new(title: rental["title"], 
     id: rental["id"],
     rental_description: rental["rental_description"],
     price: rental["price"],
@@ -34,16 +31,12 @@ class Rentals
   end
   
   def self.add(title:, rental_description:, price:, contact_details:, rental_start_date:, rental_end_date:)
-    if ENV['RACK_ENV'] == 'test'
-        connection = PG.connect(dbname: 'makersbnb_test')
-    else
-        connection = PG.connect(dbname: 'makersbnb')
-    end
+    connection = db_selector
  
     result = connection.exec("INSERT INTO rentals (title, rental_description, price, contact_details, rental_start_date, rental_end_date) 
     VALUES('#{title}', '#{rental_description}', '#{price}', '#{contact_details}', '#{rental_start_date}', '#{rental_end_date}') 
     RETURNING id, title, rental_description, price, contact_details, rental_start_date, rental_end_date")
-    Rentals.new(
+    Rental.new(
       id: result[0]['id'], 
       title: result[0]['title'], 
       rental_description: result[0]['rental_description'], 
