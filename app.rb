@@ -30,7 +30,8 @@ class MakersBnB < Sinatra::Base
       price: params[:price], 
       contact_details: params[:contact_details],
       rental_start_date: params[:rental_start_date],
-      rental_end_date: params[:rental_end_date]
+      rental_end_date: params[:rental_end_date],
+      owner_id: session['username'].id
       )
     redirect '/'
   end
