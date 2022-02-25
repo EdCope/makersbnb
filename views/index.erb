@@ -25,10 +25,13 @@
       <div class="navbar-item">
         <div class="field is-horizontal is-grouped">
           <% if !@username.nil? %>
-            <form action="/account" method="post">
+          <div class="field has-text-white">
+          Signed in as <%= @username.username %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+          </div>
+            <form action="/myaccount">
             <div class="field-body">
               <div class="field">
-                <button class="button is-primary" type="submit" value="Account">
+                <button class="button is-primary" type="submit" value="My account">
                 My Account
                 </button>
             </div>
