@@ -75,7 +75,7 @@
 </nav>
 
 <div class="container is-max-desktop"><br style="line-height:10;">
-  <div class="notification is-primary">
+  <div class="notification is-black">
   <% @rentals.each do |rental| %>
   <article class="media">
     <figure class="media-left">
@@ -83,7 +83,7 @@
         <img src="https://bulma.io/images/placeholders/128x128.png">
       </p>
     </figure>
-    <div class="media-content">
+    <div class="media-content is-size-5">
       <div class="content">
         <p>
           <%= rental.title %>
@@ -92,9 +92,12 @@
           <%= rental.contact_details %>
           <%= rental.rental_start_date.split("-").reverse.join("-") %>
           <%= rental.rental_end_date.split("-").reverse.join("-") %>
+          <% if !@username.nil? %>
           <form action="/rental/<%= rental.id %>" method="post">
-          <input type="submit" id="rental_select_<%= rental.id %>" value="View rental">
+          <div class="buttons">
+          <button class="button is-primary" id="rental_select_<%= rental.id %>">View rental</button>
           </form>
+          <% end %>
           <br>
         </p>
       </div>

@@ -1,13 +1,68 @@
-<form action="/add_rental">
-  <input type="submit" value="List a property">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
 
-Received booking requests<br><br><br><br><br><br><br><br><br><br><br><br>
+  <nav class="navbar has-background-black-bis" role="navigation">
+    <div id="makersbnb_navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="level-item has-text-centered">
+          <div>
+            <figure class="image is-128x128"><img src='/images/Makers_logo.png'></figure>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <h1 class="title is-1 has-text-white">MakersBnB</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+        <form action='/'>
+        <button class="button is-black is-medium">Home</button>
+        </form>
+        </div>
+  </div>
+  </nav>
 
-Bookings that you have requested
-<br>
-<%if !@requests.nil? %>
-<% @requests.each do |request| %>
-  <%= request['requested_date']%>
-<% end %>
-<%end%>
+  <div>
+    <section class="section">
+      <form action="/add_rental">
+        <button class="button is-primary" type="submit" value="List a property">List a property</button>  
+      </form>
+    </section>
+  </div>
+
+  <div>
+    <section class="section">
+      <label class="label is-size-5 has-text-grey">Received booking requests</label>
+    </section>
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+
+  <div>
+    <section class="section">
+      <label class="label is-size-5 has-text-grey">Bookings that you have requested</label>
+    </section>
+  </div>
+  
+    <div>
+      <div class="field-body">
+          <label class="field is-size-5 has-text-grey">
+            <%if !@requests.nil? %>
+            <ul>
+            <% @requests.each do |request| %>
+              <li><%= request['requested_date']%></li>
+              <br>
+              <br>
+            <% end %>
+            </ul>
+            <%end%>
+          </label>
+          </div>
+      </div>
+</html>

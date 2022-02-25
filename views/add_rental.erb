@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
 
-  <body>
-    <nav class="level has-background-black-bis">
+<nav class="navbar has-background-black-bis" role="navigation">
+  <div id="makersbnb_navbar" class="navbar-menu">
+    <div class="navbar-start">
       <div class="level-item has-text-centered">
         <div>
           <figure class="image is-128x128"><img src='/images/Makers_logo.png'></figure>
@@ -18,12 +19,14 @@
           <h1 class="title is-1 has-text-white">MakersBnB</h1>
         </div>
       </div>
-      <div class="level-item has-text-centered">
-        <div>
+    </div>
+    <div class="level-item has-text-centered">
+        <form action='/'>
         <button class="button is-black is-medium">Home</button>
+        </form>
         </div>
-      </div>
-    </nav>
+  </div>
+</nav>
     <section class="section">
       <div class="container">
         <form action="/add_rental" method="post">
@@ -54,7 +57,7 @@
               </div>
             </div>
           <br>
-          <button class="button is-black" type="submit">Submit</button>
+          <button class="button is-primary" type="submit">Submit</button>
         </form>
       </div>
     </section>
