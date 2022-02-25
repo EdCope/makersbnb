@@ -56,7 +56,7 @@
             <%if !@requests.nil? %>
             <ul>
             <% @requests.each do |request| %>
-              <li><%= request['requested_date']%></li>
+              <li><%= request['requested_date'].split('-').reverse.join('-')%></li>
               <br>
               <br>
             <% end %>

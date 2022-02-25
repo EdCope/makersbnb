@@ -75,7 +75,7 @@
 </nav>
 
 <div class="container is-max-desktop"><br style="line-height:10;">
-  <div class="notification is-black">
+  <div class="notification is-grey">
   <% @rentals.each do |rental| %>
   <article class="media">
     <figure class="media-left">
@@ -86,12 +86,10 @@
     <div class="media-content is-size-5">
       <div class="content">
         <p>
-          <%= rental.title %>
-          <%= rental.rental_description %>
-          <%= rental.price %>
-          <%= rental.contact_details %>
-          <%= rental.rental_start_date.split("-").reverse.join("-") %>
-          <%= rental.rental_end_date.split("-").reverse.join("-") %>
+          <%= rental.title %> <br>
+          Price per night: £<%= rental.price %> <br>
+          Available between: <%= rental.rental_start_date.split("-").reverse.join("-") %>
+          & <%= rental.rental_end_date.split("-").reverse.join("-") %>
           <% if !@username.nil? %>
           <form action="/rental/<%= rental.id %>" method="post">
           <div class="buttons">
